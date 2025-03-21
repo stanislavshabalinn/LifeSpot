@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Text;
 
 namespace LifeSpot
@@ -11,19 +14,17 @@ namespace LifeSpot
         /// </summary>
         public static void PrintMessage(Action logMode)
         {
-            // Lambdas.Test();
-
             Console.OutputEncoding = Encoding.Unicode;
             // Запускаем логирование
             Console.WriteLine("Логгер запущен");
 
             // Вызываем делегат
-            // "Под капотом" будет вызван метод, на который указывает делегат, что по сути очень 
+            // "Под капотом" будет вызван метод, на который указывает делегат, что по сути очень
             // похоже на то, как работает передача функций в качестве параметра в JS
             logMode.Invoke();
         }
 
-        // Вывод информационныз сообщений 
+        // Вывод информационных сообщений
         public static void Info(string message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -31,7 +32,7 @@ namespace LifeSpot
             Console.ResetColor();
         }
 
-        // Вывод предупреждений 
+        // Вывод предупреждений
         public static void Warning(string message)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
